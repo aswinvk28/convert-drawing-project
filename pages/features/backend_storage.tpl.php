@@ -1,4 +1,4 @@
-<div class="clearfix">
+<div class="clearfix section-page-file">
     <p>Proximity charts and Bubble diagrams are recommended to use for developing floor plans. They improve productivity and 
     understanding of the layout and helps in analysis of the design. The configuration data consisting of block properties, block dimensions and customised objects for the user 
     are maintained within the drawing editor in a separate module which consists of a storage mechanism and a user interface.</p>

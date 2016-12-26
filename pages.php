@@ -9,8 +9,7 @@
 function page_get_features($context, $route, $page) {
     ob_start();
     require_once PAGE_ROOT . "/pages/features/features.php";
-    $page['content'] = ob_get_contents();
-    ob_end_clean();
+    $page['content'] = ob_get_clean();
     $page['section_name'] = "features";
     return $page;
 }
@@ -18,26 +17,23 @@ function page_get_features($context, $route, $page) {
 function page_get_pricing($context, $route, $page) {
     ob_start();
     require_once PAGE_ROOT . "/pages/pricing/pricing.php";
-    $page['content'] = ob_get_contents();
-    ob_end_clean();
-    $page['section_name'] = "features";
+    $page['content'] = ob_get_clean();
+    $page['section_name'] = "pricing";
     return $page;
 }
 
 function page_get_contact_us($context, $route, $page) {
     ob_start();
     require_once PAGE_ROOT . "/pages/contact_us/contact_us.php";
-    $page['content'] = ob_get_contents();
-    ob_end_clean();
-    $page['section_name'] = "features";
+    $page['content'] = ob_get_clean();
+    $page['section_name'] = "contact_us";
     return $page;
 }
 
 function page_get_home($context, $route, $page) {
     ob_start();
     require_once PAGE_ROOT . "/pages/home/home.php";
-    $page['content'] = ob_get_contents();
-    ob_end_clean();
+    $page['content'] = ob_get_clean();
     $page['section_name'] = "home";
     return $page;
 }

@@ -1,4 +1,4 @@
-<div class="clearfix">
+<div class="clearfix section-page-file">
     <p>The drawing editor provides importing and exporting of floor plans along with creation of floor plans from ideation.
     The design stage integrates with the feedback supplied by the project members for making any improvements and suggestions on to the floor plan.
     Drawing interoperability is integrated into enscalo and is one of the most important features for users to switch between applications.</p>

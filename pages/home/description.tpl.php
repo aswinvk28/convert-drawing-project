@@ -1,7 +1,7 @@
-<div class="clearfix">
+<div class="clearfix section-page-file">
     <p>Enscalo is a drawing software that promotes conceptualisation of the desired requirements for a floor planner project.
     Drawing a floor plan gets easier when the components of the floor plan are built holistically. Understanding every detailing in the plan is what enscalo 
-    promotes for further development of the document.
+    promotes for further developing a floor plan for a building project.
     </p>
     <p>Enscalo helps in designing a plan and collaborate them with the project members for obtaining reviews on the plan.
     The software solves the problem of creating, maintaining and evaluation of drawings to exporting the drawings to a suitable editor.

@@ -31,7 +31,7 @@ class Context extends stdClass
         foreach($routes as $path => $route) {
             extract($route['variables']);
             $page = call_user_func($route['callable'], $this, $route, $page);
-            $this->page_variables['html_content'] .= call_user_func('page_execute_script', $page, $route['callable'], $this, $route);
+            $this->page_variables['html_content'] .= call_user_func('page_execute_script', $page, $this, $route);
         }
         echo render_template(PAGE_ROOT . "/templates/page.tpl.php", $this->page_variables);
     }
@@ -79,9 +79,8 @@ function render($content) {
 function render_template($filePath, $variables) {
     extract($variables);
     ob_start();
-    require_once($filePath);
-    $contents = ob_get_contents();
-    ob_end_clean();
+    require($filePath);
+    $contents = ob_get_clean();
     return $contents;
 }
 

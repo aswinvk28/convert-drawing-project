@@ -7,11 +7,11 @@
 function header_animate(elem) {
     if(document.getElementById("header_top").style.display != "none") {
         $('#header_top').slideUp(250, function() {
-            elem.firstChild.className = "glyphicon-arrow-down";
+            elem.firstChild.className = "glyphicon glyphicon-chevron-down";
         });
     } else if(document.getElementById("header_top").style.display == "none") {
         $('#header_top').slideDown(250, function() {
-            elem.firstChild.className = "glyphicon-arrow-up";
+            elem.firstChild.className = "glyphicon glyphicon-chevron-up";
         });
     }
 }

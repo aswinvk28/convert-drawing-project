@@ -1,5 +1,5 @@
-<div class="clearfix">
-    <table class="pricing-table table table-bordered table-condensed table-striped table-responsive">
+<div class="clearfix section-page-file">
+    <table class="pricing-table table table-bordered table-responsive">
         <thead>
             <tr>
                 <th></th>
