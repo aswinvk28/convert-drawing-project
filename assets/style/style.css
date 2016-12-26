@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Author     : aswin.vijayakumar
+*/
+
+.bg-img-pan {
+    background-image: url(images/screenshot-v1.jpeg);
+    background-position: 0 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.notice {
+    font-style: italic;
+    font-size: 11px;
+}
+.pricing-table > thead > tr > th {
+    height: 120px;
+    vertical-align: middle;
+    text-align: center;
+}
+.pricing-table .plan-signup {
+    height: 120px;
+    vertical-align: middle;
+    text-align: center;
+}
+#page_header {
+    background-color: white;
+}
+#header_top {
+    height: 120px;
+    position: relative;
+    padding-top: 15px;
+}
+.absolute {
+    position: absolute;
+}
+.menu-links {
+    margin-left: 250px;
+    top: 0;
+    left: 0;
+    width: 300px;
+}
+.menu-links ul {
+    margin-bottom: 0px;
+}
+.menu-links li.list-group-item:first-child {
+    width: 100px;
+    margin-left: 0px;
+}
+.menu-links li.list-group-item {
+    width: 120px;
+    margin-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+#header_fixed {
+    position: fixed;
+}
