@@ -8,7 +8,7 @@
 
 set_error_handler(function($errorno, $errorstr, $errorfile, $errorline, $errorcontext) {
     $error_file = realpath($GLOBALS['error_path']);
-    $error_type = $error == E_USER_ERROR ? 'Error' : $errorno == E_USER_NOTICE ? 'Notice' : $errorno == E_USER_WARNING ? 'Warning' : 'Undefined';
+    $error_type = $errorno == E_USER_ERROR ? 'Error' : $errorno == E_USER_NOTICE ? 'Notice' : $errorno == E_USER_WARNING ? 'Warning' : 'Undefined';
     $error_message = "{$error_type}: in '{$errorfile}' at line {$errorline} \n
             {$errorstr}\n";
     if(!file_exists($error_file)) {

@@ -25,7 +25,7 @@ function page_get_pricing($context, $route, $page) {
 function page_get_contact_us($context, $route, $page) {
     if($context->http_method == "POST") {
         $params = array();
-        $valid = site_sanitize_params_contact_us($params, $_POST);
+        $valid = site_sanitize_params_contact_us($_POST, $params);
         if(!$valid) {
             $params = print_r($_POST, true);
             trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s"), E_USER_WARNING);
@@ -39,7 +39,7 @@ function page_get_contact_us($context, $route, $page) {
             return;
         }
         http_response_code(200);
-        $params['body'] = site_process_mail_body_contact_us($params, $context, $GLOBALS['email_to']);
+        $params = site_process_mail_body_contact_us($params, $context, $GLOBALS['email_to']);
         $mail = site_send_mail($params["contact_email"], array($GLOBALS['email_to']), $params['body'], $params['plan_selected']);
         if($mail) { 
             $page['message'] = "The mail has been delivered"; 

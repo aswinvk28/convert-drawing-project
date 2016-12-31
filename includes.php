@@ -143,6 +143,6 @@ function site_send_mail($from = "", $to = array(), $body = "", $subject = "") {
     if($from) {
         $headers[] = "From: <{$from}>";
     }
-    $mail = mail($to[0], $subject, $body, $headers);
+    $mail = mail($to[0], $subject, $body, implode("\r\n", $headers));
     return $mail;
 }

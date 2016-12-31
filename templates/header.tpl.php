@@ -5,12 +5,18 @@
         </div>
         <div class="menu absolute menu-links">
             <ul class="list-unstyled list-group navbar list-inline">
-                <li class="list-group-item">Enscalo</li>
-                <li class="list-group-item">Features</li>
+                <li class="list-group-item list-group-item-info"><a class="menu-link" href="#home" onclick="navigate_to_section(this); return false;">Enscalo</a></li>
+                <li class="list-group-item"><a class="menu-link" href="#features" onclick="navigate_to_section(this); return false;">Features</a></li>
             </ul>
             <ul class="navbar-header list-unstyled list-group list-inline">
-                <li class="list-group-item">Pricing</li>
-                <li class="list-group-item">Contact Us</li>
+                <li class="list-group-item"><a class="menu-link" href="#pricing" onclick="navigate_to_section(this); return false;">Pricing</a></li>
+                <li class="list-group-item"><a class="menu-link" href="#contact_us" onclick="navigate_to_section(this); return false;">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="absolute menu-links">
+            <ul class="list-unstyled list-group navbar list-inline">
+                <li class="list-group-item list-group-item-info"><a class="menu-link" href="http://blog.enscalo.co.uk">Blog</a></li>
+                <li class="list-group-item"><a class="menu-link" href="#features" onclick="navigate_to_section(this); return false;">Features</a></li>
             </ul>
         </div>
     </div>
