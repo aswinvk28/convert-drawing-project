@@ -28,7 +28,7 @@ $routes = array(
     '/contact-us' => array(
         'callable' => 'page_get_contact_us',
         'variables' => array(
-            'page' => array('content' => array(), 'sidebar' => array())
+            'page' => array('content' => array(), 'sidebar' => array(), 'message' => '')
         )
     )
 );

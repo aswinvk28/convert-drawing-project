@@ -10,6 +10,7 @@ require_once "includes.php";
 define("PAGE_ROOT", dirname(__FILE__));
 
 require_once PAGE_ROOT . "/pages.php";
+require_once PAGE_ROOT . "/errors.php";
 
 global $routes;
 session_start();

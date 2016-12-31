@@ -96,3 +96,53 @@ function html_wrapper($content, $options = array()) {
     $prefix .= "</" . $options['tag'];
     return $prefix;
 }
+
+function site_sanitize_params_contact_us($post, &$params = array()) {
+    if(empty($post)) return false;
+    $params["contact_name"] = filter_input(INPUT_POST, "contact_name", FILTER_SANITIZE_STRING, 
+            array("flags" => array(FILTER_FLAG_STRIP_BACKTICK, FILTER_FLAG_ENCODE_HIGH, FILTER_FLAG_ENCODE_LOW)));
+    $params["contact_email"] = filter_input(INPUT_POST, "contact_email", FILTER_VALIDATE_EMAIL);
+    $params["plan_selected"] = filter_input(INPUT_POST, "plan_selected", FILTER_SANITIZE_STRING,
+            array("flags" => array(FILTER_FLAG_STRIP_BACKTICK, FILTER_FLAG_STRIP_HIGH, FILTER_FLAG_STRIP_LOW)));
+    if($post["submit"] == "submit" && count(array_filter($params)) == 3) {
+        return 200;
+    }
+    return 400;
+}
+
+function site_process_mail_body_contact_us($params, $context, $to) {
+    $date = new DateTime('now');
+    $body = "\n\n
+    Contact Name:\n
+    {$params['contact_name']}\n
+    
+    Date:\n
+    {$date->format("Y-m-d H:i:s")}\n
+    
+    Plan Selected:\n
+    {$params['plan_selected']}\n
+    
+    Contact Email:\n
+    {$params['contact_email']}\n
+    
+    IP Address:\n
+    {$context->ip}\n
+    
+    This is a request for Sign up received by {$to} on {$date->format("Y-m-d H:i:s")} in the name of {$params['contact_name']}. Please contact {$params['contact_email']} as soon as possible for the enquiry,
+    about {$params['plan_selected']}.\n
+    ";
+    
+    $params['body'] = $body;
+    
+    return $params;
+}
+
+function site_send_mail($from = "", $to = array(), $body = "", $subject = "") {
+    if(empty($to)) return false;
+    $headers = array();
+    if($from) {
+        $headers[] = "From: <{$from}>";
+    }
+    $mail = mail($to[0], $subject, $body, $headers);
+    return $mail;
+}
