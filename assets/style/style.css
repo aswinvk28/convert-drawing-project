@@ -72,6 +72,28 @@ and open the template in the editor.
 .menu-links li.list-group-item a:hover {
     text-decoration: none;
 }
+.side-links {
+    margin-right: 0px;
+    margin-top: 13px;
+    top: 0;
+    right: 0;
+    width: 100px;
+}
+.side-links ul {
+    margin-bottom: 0px;
+}
+.side-links li.list-group-item:first-child {
+    width: 100px;
+    margin-left: 0px;
+}
+.side-links li.list-group-item {
+    width: 120px;
+    margin-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    cursor: pointer;
+}
 #header_fixed {
     position: fixed;
     width: 100%;
