@@ -1,8 +1,5 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<div class="clearfix">
+    <div class="pull-right">
+        <p>Email: <em><a href="mailto:enscalo@convertdrawing.com">enscalo@convertdrawing.com</a></em></p>
+    </div>
+</div>
