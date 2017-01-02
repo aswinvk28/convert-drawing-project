@@ -6,6 +6,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
     </head>
     <body>
+        <?php require_once "analyticstracking.tpl.php"; ?>
         <div class="clearfix" id="header_fixed">
             <div id="page_header" class="container-fluid">
                 <?php require_once "header.tpl.php"; ?>
