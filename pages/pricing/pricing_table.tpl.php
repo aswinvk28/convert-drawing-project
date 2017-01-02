@@ -42,6 +42,7 @@
             <tr>
                 <td>Workspace *</td>
                 <td class="premium-plan"></td>
+                <td class="premium-plan"></td>
                 <td class="advanced-plan"><i class="glyphicon glyphicon-ok"></i></td>
             </tr>
             <tr>
