@@ -143,3 +143,7 @@ and open the template in the editor.
 .plan-form .form-group {
     margin-bottom: 18px;
 }
+#page_footer {
+    padding-top: 50px;
+    height: 320px;
+}

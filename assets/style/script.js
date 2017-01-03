@@ -18,8 +18,8 @@ function header_animate(elem) {
     }
 }
 
-function navigate_to_section(elem) {
-    var section = elem.attributes.getNamedItem("href").nodeValue.replace("#", ""), offset = 0, height = $('#page_header').height();
+function navigate_to_section(elem, section) {
+    var section = section ? section : elem.attributes.getNamedItem("href").nodeValue.replace("#", ""), offset = 0, height = $('#page_header').height();
     switch(section) {
         case "home":
             offset = $('a[name="section_home"]').offset();
@@ -56,6 +56,15 @@ function get_offsets() {
     return offsets;
 }
 
+function section_route_mapping() {
+    return {
+        "home": "home",
+        "features": "features",
+        "pricing": "pricing",
+        "contact-us": "contact_us"
+    };
+}
+
 (function($, window) {
     
     var scrollTop = $('body').scrollTop(), height = $('#page_header').height();
@@ -77,5 +86,10 @@ function get_offsets() {
             }
         }
     });
+    
+    if(route) {
+        var elements = document.getElementsByName(route);
+        navigate_to_section(elements.item(0), section_route_mapping()[route]);
+    }
     
 })(jQuery, window);

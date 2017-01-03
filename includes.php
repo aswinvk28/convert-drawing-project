@@ -48,6 +48,7 @@ class Context extends stdClass
 
 function get_page_context() {
     $output = array();
+    $params = array();
     $context = new Context();
     $context->uri = $_SERVER['REQUEST_URI'];
     $context->path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
@@ -57,9 +58,8 @@ function get_page_context() {
     $context->is_https = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : false;
     $context->ip = $_SERVER['REMOTE_ADDR'];
     $context->q = isset($_GET['q']) ? $_GET['q'] : '';
-    $context->parse = parse_url($context->query, PHP_URL_QUERY);
-    $context->hash = parse_url($context->query, PHP_URL_FRAGMENT);
-    $context->variables = parse_str($context->query, $output);
+    parse_str($context->query, $output);
+    $context->variables = $output;
     $context->page_variables = array('html_content' => '');
     
     return $context;
