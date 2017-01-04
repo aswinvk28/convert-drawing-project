@@ -1,0 +1,19 @@
+<div align="center">
+	<video id="video_containter" class="video-js vjs-default-skin" controls preload="none" width="720" height="480" poster="/video/poster.jpg" data-setup="{}">
+		<source src="/video/Enscalo-Marketing-Video.mp4" type="video/mp4" />
+		<!--
+		<track kind="captions" src="" srclang="en_US" label="English (U.S.)" />
+		-->
+	</video>
+	
+	<div id="video_alt">You need <a href="http://get.adobe.com/flashplayer">Flash Player</a> to view this video.</div>
+	
+</div>
+
+<script type="text/javascript">
+	//remove alternative content when player ready
+	_V_("video_containter").ready(function(){
+		var element = document.getElementById("video_alt");
+		element.parentNode.removeChild(element);
+	});
+</script>

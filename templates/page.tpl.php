@@ -17,6 +17,11 @@
         <link href="/assets/style/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets/style/style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <link href="/video/player/mediaplayer.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/video/player/mediaplayer.js"></script>
+	<script type="text/javascript">
+		_V_.options.flash.swf = "/video/player/mediaplayer.swf";
+	</script>
     </head>
     <body>
         <?php require_once "analyticstracking.tpl.php"; ?>
