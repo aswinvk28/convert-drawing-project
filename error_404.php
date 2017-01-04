@@ -1,3 +1,15 @@
+<?php
+require_once "includes.php";
+define("PAGE_ROOT", dirname(__FILE__));
+
+require_once PAGE_ROOT . "/pages.php";
+require_once PAGE_ROOT . "/errors.php";
+
+global $routes;
+session_start(); 
+register_shutdown_function('page_shutdown_site');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +30,7 @@
                 <div class="container">
                     <h1 class="text-center">404 Error</h1>
                     <p>An error has occurred in delivering the page</p>
+                    <button type="button" class="btn btn-danger" onclick="navigate_to_section(this, 'home', true); return false;">Go to home page</button>
                 </div>
             </div>
 

@@ -18,7 +18,11 @@ function header_animate(elem) {
     }
 }
 
-function navigate_to_section(elem, section) {
+function navigate_to_section(elem, section, navigation) {
+    if(navigation && section) {
+        window.location.href = "/" + route_section_mapping()[section];
+        return false;
+    }
     var section = section ? section : elem.attributes.getNamedItem("href").nodeValue.replace("#", ""), offset = 0, height = $('#page_header').height();
     switch(section) {
         case "home":
@@ -62,6 +66,15 @@ function section_route_mapping() {
         "features": "features",
         "pricing": "pricing",
         "contact-us": "contact_us"
+    };
+}
+
+function route_section_mapping() {
+    return {
+        "home": "home",
+        "features": "features",
+        "pricing": "pricing",
+        "contact_us": "contact-us"
     };
 }
 

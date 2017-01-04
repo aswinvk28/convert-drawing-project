@@ -1,11 +1,11 @@
 <div class="clearfix section-page-file">
     <?php if(!empty($page['message'])): ?>
-    <div class="alert alert-default">
+    <div class="alert alert-info">
         <p><?php echo $page['message']; ?></p>
     </div>
     <?php endif; ?>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <form id="submit_plan" class="plan-form form-horizontal" action="/" method="POST">
+        <form id="submit_plan" class="plan-form form-horizontal" action="/contact-us" method="POST">
             <div class="form-group">
                 <input class="form-control" type="text" name="contact_name" id="contact_name" placeholder="Name" />
             </div>

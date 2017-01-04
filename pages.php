@@ -28,13 +28,13 @@ function page_get_contact_us($context, $route, $page) {
         $valid = site_sanitize_params_contact_us($_POST, $params);
         if(!$valid) {
             $params = print_r($_POST, true);
-            trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s"), E_USER_WARNING);
+            trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s") . " using " . $context->ip, E_USER_WARNING);
             http_response_code(404);
             return;
         }
         if($valid !== 200) {
             $params = print_r($_POST, true);
-            trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s"), E_USER_WARNING);
+            trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s") . " using " . $context->ip, E_USER_WARNING);
             http_response_code($valid);
             return;
         }

@@ -71,9 +71,9 @@
             </tr>
             <tr class="plan-signup">
                 <td></td>
-                <td class="basic-plan"><button id="basic_subscription" type="button" class="btn btn-danger">Contact Us</button></td>
-                <td class="premium-plan"><button id="premium_subscription" type="button" class="btn btn-danger">Contact Us</button></td>
-                <td class="advanced-plan"><button id="advanced_subscription" type="button" class="btn btn-danger">Contact Us</button></td>
+                <td class="basic-plan"><button id="basic_subscription" type="button" class="btn btn-danger" onclick="navigate_to_section(this, 'contact_us', true); return false;">Contact Us</button></td>
+                <td class="premium-plan"><button id="premium_subscription" type="button" class="btn btn-danger" onclick="navigate_to_section(this, 'contact_us', true); return false;">Contact Us</button></td>
+                <td class="advanced-plan"><button id="advanced_subscription" type="button" class="btn btn-danger" onclick="navigate_to_section(this, 'contact_us', true); return false;">Contact Us</button></td>
             </tr>
         </tbody>
     </table>
