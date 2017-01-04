@@ -10,7 +10,7 @@
             We provide a platform to develop your drawings and record your observations to enable ease of use and provide better user experience. 
         </p>
         <div class="img-thumbnail">
-            <img src="/assets/style/images/live_screenshots/screenshot-printmode-slide.png" class="img-responsive center-block" />
+            <img src="/assets/style/images/screenshot-printmode-slide.png" class="img-responsive center-block" />
         </div>
     </div>
 </div>
