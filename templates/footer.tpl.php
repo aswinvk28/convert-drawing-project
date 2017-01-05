@@ -1,5 +1,6 @@
 <div class="clearfix">
     <div class="pull-right">
+        <h4 class="text-capitalize heading">Write to Us</h4>
         <p>Email: <em><a href="mailto:enscalo@convertdrawing.com">enscalo@convertdrawing.com</a></em></p>
     </div>
 </div>

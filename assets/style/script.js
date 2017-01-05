@@ -20,6 +20,10 @@ function header_animate(elem) {
 
 function navigate_to_section(elem, section, navigation) {
     if(navigation && section) {
+        // elem is null, navigation and section assigned
+        if(window.location.hostname == "enscalo.co.uk") {
+            ga('send', 'event', 'Button', section, window.location.pathname);
+        }
         window.location.href = "/" + route_section_mapping()[section];
         return false;
     }
@@ -103,6 +107,12 @@ function route_section_mapping() {
     if(route) {
         var elements = document.getElementsByName(route);
         navigate_to_section(elements.item(0), section_route_mapping()[route]);
+    }
+    
+    if(window.location.hostname == "enscalo.co.uk") {
+        _V_("video_containter").bigPlayButton.el.onclick = function(event) {
+            ga('send', 'event', 'Video', 'play', 'Site');
+        };
     }
     
 })(jQuery, window);

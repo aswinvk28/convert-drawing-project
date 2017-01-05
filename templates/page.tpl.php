@@ -24,7 +24,9 @@
 	</script>
     </head>
     <body>
+        <?php if($GLOBALS["environment"] == "prod"): ?>
         <?php require_once "analyticstracking.tpl.php"; ?>
+        <?php endif; ?>
         <div class="clearfix" id="header_fixed">
             <div id="page_header" class="container-fluid">
                 <?php require_once "header.tpl.php"; ?>
