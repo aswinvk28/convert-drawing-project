@@ -21,7 +21,7 @@ function header_animate(elem) {
 function navigate_to_section(elem, section, navigation) {
     if(navigation && section) {
         // elem is null, navigation and section assigned
-        if(window.location.hostname == "enscalo.co.uk") {
+        if(window.location.hostname.indexOf("enscalo.co.uk") !== -1) {
             ga('send', 'event', 'Button', section, window.location.pathname);
         }
         window.location.href = "/" + route_section_mapping()[section];
@@ -109,7 +109,7 @@ function route_section_mapping() {
         navigate_to_section(elements.item(0), section_route_mapping()[route]);
     }
     
-    if(window.location.hostname == "enscalo.co.uk") {
+    if(window.location.hostname.indexOf("enscalo.co.uk") !== -1) {
         _V_("video_containter").bigPlayButton.el.onclick = function(event) {
             ga('send', 'event', 'Video', 'play', 'Site');
         };
