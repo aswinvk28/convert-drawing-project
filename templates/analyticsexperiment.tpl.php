@@ -1,3 +1,7 @@
+<?php
+$context = get_page_context();
+if(isset($context->variables["utm_source"]) && isset($context->variables["utm_view"])):
+?>
 <!-- Google Analytics Content Experiment code -->
 <script>function utmx_section(){}function utmx(){}(function(){var
 k='137095180-1',d=document,l=d.location,c=d.cookie;
@@ -12,3 +16,4 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
 </script><script>utmx('url','A/B');</script>
 <!-- End of Google Analytics Content Experiment code -->
+<?php endif; ?>
