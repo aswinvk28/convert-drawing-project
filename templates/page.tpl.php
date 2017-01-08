@@ -22,7 +22,7 @@
 	<script type="text/javascript">
 		_V_.options.flash.swf = "/video/player/mediaplayer.swf";
 	</script>
-        <?php require_once "analyticsexperiment.tpl.php"; ?>
+        <?php // require_once "analyticsexperiment.tpl.php"; ?>
     </head>
     <body>
         <?php if($GLOBALS["environment"] == "prod"): ?>

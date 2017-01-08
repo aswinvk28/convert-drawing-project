@@ -106,6 +106,9 @@ function route_section_mapping() {
     
     if(route) {
         var elements = document.getElementsByName(route);
+        if(route.indexOf("/") !== -1) {
+            route = route.substr(0, route.indexOf("/"));
+        }
         navigate_to_section(elements.item(0), section_route_mapping()[route]);
     }
     
