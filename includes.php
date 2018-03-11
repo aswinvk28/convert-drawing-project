@@ -159,5 +159,5 @@ function site_send_mail($from = "", $to = array(), $body = "", $subject = "") {
 }
 
 function generate_csrf() {
-    return urlencode(base64_encode(openssl_random_pseudo_bytes(32)));
+    return urlencode(base64_encode(md5(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyz "))));
 }
