@@ -26,6 +26,7 @@ function page_get_contact_us($context, $route, $page) {
     if($context->http_method == "POST") {
         $params = array();
         $valid = site_sanitize_params_contact_us($_POST, $params);
+        register_shutdown_function('page_shutdown_site');
         if(!$valid) {
             $params = print_r($_POST, true);
             trigger_error("Contact Us form parameters error\n{$params}\n" . " on " . date("Y-m-d H:i:s") . " using " . $context->ip, E_USER_WARNING);
@@ -49,6 +50,9 @@ function page_get_contact_us($context, $route, $page) {
             trigger_error($page['message'] . " on " . date("Y-m-d H:i:s"), E_USER_ERROR);
         }
     }
+    $token = generate_csrf();
+    $page['token'] = $token;
+    $_SESSION['csrf_token'] = $token;
     $content = render_template(PAGE_ROOT . "/pages/contact_us/contact_us.php", array('page' => $page));
     $page['content'] = $content;
     $page['section_name'] = "contact_us";

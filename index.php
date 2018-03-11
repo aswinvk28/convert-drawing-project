@@ -14,6 +14,7 @@ require_once PAGE_ROOT . "/errors.php";
 
 global $routes;
 session_start();
+session_regenerate_id();
 get_page_context()->dispatch($routes);
 
-register_shutdown_function('page_shutdown_site');
+register_shutdown_function('page_write_site');

@@ -9,16 +9,26 @@
 require_once "routes.php";
 require_once "config.php";
 
+function page_write_site() {
+    
+    session_write_close();
+    
+}
+
 function page_shutdown_site() {
-    
+
+    session_unset();
     session_destroy();
-    
+
 }
 
 class Context extends stdClass
 {
     function dispatch($routes)
     {
+        if(!isset($_SESSION['token'])) {
+            setcookie('PHPSESSID', 0, time()- 3600);
+        }
         if($GLOBALS['single_page']) {
             $this->dispatch_single_page($routes);
         } else {
@@ -99,6 +109,7 @@ function html_wrapper($content, $options = array()) {
 
 function site_sanitize_params_contact_us($post, &$params = array()) {
     if(empty($post)) return false;
+    if($_SESSION['csrf_token'] != $post['token']) return 404;
     $params["contact_name"] = filter_input(INPUT_POST, "contact_name", FILTER_SANITIZE_STRING, 
             array("flags" => array(FILTER_FLAG_STRIP_BACKTICK, FILTER_FLAG_ENCODE_HIGH, FILTER_FLAG_ENCODE_LOW)));
     $params["contact_email"] = filter_input(INPUT_POST, "contact_email", FILTER_VALIDATE_EMAIL);
@@ -145,4 +156,8 @@ function site_send_mail($from = "", $to = array(), $body = "", $subject = "") {
     }
     $mail = mail($to[0], $subject, $body, implode("\r\n", $headers));
     return $mail;
+}
+
+function generate_csrf() {
+    return urlencode(base64_encode(openssl_random_pseudo_bytes(32)));
 }
