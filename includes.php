@@ -110,10 +110,10 @@ function html_wrapper($content, $options = array()) {
 function site_sanitize_params_contact_us($post, &$params = array()) {
     if(empty($post)) return false;
     if($_SESSION['csrf_token'] != $post['token']) return 404;
-    $params["contact_name"] = filter_input(INPUT_POST, "contact_name", FILTER_SANITIZE_STRING, 
+    $params["contact_name"] = filter_var($post["contact_name"], FILTER_SANITIZE_STRING, 
             array("flags" => array(FILTER_FLAG_STRIP_BACKTICK, FILTER_FLAG_ENCODE_HIGH, FILTER_FLAG_ENCODE_LOW)));
-    $params["contact_email"] = filter_input(INPUT_POST, "contact_email", FILTER_VALIDATE_EMAIL);
-    $params["plan_selected"] = filter_input(INPUT_POST, "plan_selected", FILTER_SANITIZE_STRING,
+    $params["contact_email"] = filter_var($post["contact_email"], FILTER_VALIDATE_EMAIL);
+    $params["plan_selected"] = filter_var($post["plan_selected"], FILTER_SANITIZE_STRING,
             array("flags" => array(FILTER_FLAG_STRIP_BACKTICK, FILTER_FLAG_STRIP_HIGH, FILTER_FLAG_STRIP_LOW)));
     if($post["submit"] == "submit" && count(array_filter($params)) == 3) {
         return 200;
